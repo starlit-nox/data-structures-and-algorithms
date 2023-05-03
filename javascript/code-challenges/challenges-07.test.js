@@ -26,6 +26,8 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
+  starWarsArr.sort((a, b) => parseInt(b.height) - parseInt(a.height));
+  return starWarsArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,6 +38,8 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +50,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,9 +69,11 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -77,6 +84,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 
@@ -124,6 +132,13 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  for (const ingredient of recipe.ingredients) {
+    const startIndex = ingredient.indexOf(' ') + 1;
+    const endIndex = ingredient.indexOf(' ', startIndex);
+
+    result.push(ingredient.slice(endIndex + 1));
+  }
+
   return result;
 };
 
@@ -138,6 +153,11 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  for (const ingredient of recipe.ingredients) {
+    const foodItem = ingredient.split('').slice(2).join('');
+    result.push(foodItem);
+  }
+
   return result;
 };
 
@@ -154,6 +174,11 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  for (const step of recipe.steps) {
+    const verb = step.split('')[0];
+    result.push(verb);
+  }
+
   return result;
 };
 
