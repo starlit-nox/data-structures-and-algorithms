@@ -8,7 +8,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 
 const replaceZeros = (string) => {
   // Solution code here...
-  let =
+  return string.replace(/0/g, 'zero');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,7 +21,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
-  let =
+  const pattern = /^\d{4}$/;
+  return pattern.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,11 +31,13 @@ CHALLENGE 3
 Write a function named validateWord that uses a regular expression pattern to validate that a word is between 5 and 10 characters long.
 
 If the word is between 5 and 10 characters long, return true. Otherwise, return false.
+
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
   // Solution code here...
-  let =
+  const pattern = /^[A-Za-z]{5,10}$/;
+  return pattern.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +50,8 @@ If it does, return true. If not, return false.
 
 const hasNumber = (string) => {
   // Solution code here...
-  let =
+  const pattern = /[a-zA-Z]+\d+/;
+  return pattern.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +72,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
-  let =
+  const pattern = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.(net|com|org)$/; // Regular expression pattern for email validation
+  return pattern.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,7 +99,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
-  let =
+  const pattern = /^(\(\d{3}\)|\d{3})([-\s]?)\d{3}([- ]?)\d{4}$/;
+  return pattern.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +114,6 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // Solution code here...
-  let =
 };
 
 /* ------------------------------------------------------------------------------------------------
